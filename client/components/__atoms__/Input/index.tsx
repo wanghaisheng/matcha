@@ -3,18 +3,10 @@ import { cx } from "@emotion/css";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   rounded?: boolean;
-  placeholder?: string;
   label?: string;
-  type?: string;
 };
 
-const Input: FC<InputProps> = ({
-  rounded,
-  placeholder,
-  label,
-  type,
-  className,
-}) => {
+const Input: FC<InputProps> = ({ label, rounded, className, ...props }) => {
   const inputStyle = cx(className, "py-1 px-1 border w-auto px-2", {
     "rounded-lg": rounded,
   });
@@ -22,7 +14,7 @@ const Input: FC<InputProps> = ({
   return (
     <div className="flex flex-col">
       {label && <label className="font-bold">{label}</label>}
-      <input type={type} className={inputStyle} placeholder={placeholder} />
+      <input className={inputStyle} {...props} />
     </div>
   );
 };

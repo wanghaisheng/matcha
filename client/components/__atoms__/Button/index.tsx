@@ -3,19 +3,18 @@ import { BUTTON_TYPE, SIZE } from "../../../constants";
 import { cx } from "@emotion/css";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  color: BUTTON_TYPE;
-  size: SIZE;
+  color?: BUTTON_TYPE;
+  size?: SIZE;
   reverse?: boolean;
   type?: string;
 };
 const Button: FC<ButtonProps> = ({
-  size,
+  size = SIZE.MEDIUM,
   reverse = false,
-  color,
-  onClick,
+  color = BUTTON_TYPE.PRIMARY,
   children,
   className,
-  type,
+  ...props
 }) => {
   const buttonStyle = cx(className, "font-bold rounded-lg py-1 px-5", {
     "bg-primary text-white": !reverse && color === BUTTON_TYPE.PRIMARY,
@@ -31,7 +30,7 @@ const Button: FC<ButtonProps> = ({
   });
 
   return (
-    <button type={type} onClick={onClick} className={buttonStyle}>
+    <button className={buttonStyle} {...props}>
       {children}
     </button>
   );

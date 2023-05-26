@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import Button from "@/components/__atoms__/Button";
 import { BUTTON_TYPE, SIZE } from "@/constants";
 import Input from "@/components/__atoms__/Input";
+import Signin from "@/components/__molecules__/Signin";
+import InputPassword from "@/components/__atoms__/InputPassword";
 
 const Home = () => {
   return (
@@ -24,8 +26,11 @@ const Home = () => {
       </div>
       <div className="bg-primary">
         <h2>Input</h2>
-        <Input type="text" placeholder="test" label="test" center />
-        <Input type="password" placeholder="test" rounded />
+        <Input type="text" placeholder="TEST" label="TEST" />
+        <InputPassword />
+      </div>
+      <div>
+        <Signin />
       </div>
     </main>
   );
