@@ -5,8 +5,7 @@ import Button from "@/components/__atoms__/Button";
 import InputPassword from "@/components/__atoms__/InputPassword";
 import Link from "next/link";
 
-type SigninProps = {};
-const Signin: FC<SigninProps> = () => {
+const Signin: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

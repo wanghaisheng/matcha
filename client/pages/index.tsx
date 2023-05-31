@@ -5,6 +5,16 @@ import { BUTTON_TYPE, SIZE } from "@/constants";
 import Input from "@/components/__atoms__/Input";
 import Signin from "@/components/__molecules__/Signin";
 import InputPassword from "@/components/__atoms__/InputPassword";
+import OverlayMenu from "@/components/__molecules__/OverlayMenu";
+
+const user = {
+  firstname: "JOHN",
+  lastname: "DOE",
+  image: "/../public/img/photoUser.png",
+  isConnected: true,
+  age: 22,
+  genre: "Homme",
+};
 
 const Home = () => {
   return (
@@ -29,8 +39,11 @@ const Home = () => {
         <Input type="text" placeholder="TEST" label="TEST" />
         <InputPassword />
       </div>
+      <Signin />
+
       <div>
-        <Signin />
+        <h3>USER</h3>
+        <OverlayMenu user={user} />
       </div>
     </main>
   );
