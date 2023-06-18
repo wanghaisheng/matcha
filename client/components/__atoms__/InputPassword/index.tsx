@@ -8,14 +8,10 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   placeholder?: string;
 };
 
-const InputPassword: FC<InputProps> = ({ rounded, className, ...props }) => {
-  const inputStyle = cx(
-    className,
-    "flex bg-white py-1 px-1 border w-auto px-2 outline-none",
-    {
-      "rounded-lg": rounded,
-    }
-  );
+const InputPassword: FC<InputProps> = ({ rounded, ...props }) => {
+  const inputStyle = cx("flex py-1 px-1 border w-auto px-2 justify-between", {
+    "rounded-2xl": rounded,
+  });
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => setShowPassword(!showPassword);
@@ -26,14 +22,15 @@ const InputPassword: FC<InputProps> = ({ rounded, className, ...props }) => {
         type={showPassword ? "text" : "password"}
         {...props}
         autoFocus={false}
-        className="focus:outline-none"
+        className="focus:outline-none placeholder:italic"
       />
       <Image
         onClick={handleShowPassword}
-        src={IconEye}
-        alt="Eye icon"
-        height={24}
+        src="/img/eye-icon.svg"
+        alt="eye-icon"
         width={24}
+        height={24}
+        className="mr-5"
       />
     </div>
   );

@@ -7,7 +7,7 @@ import Signin from "@/components/__molecules__/Signin";
 import InputPassword from "@/components/__atoms__/InputPassword";
 import OverlayMenu from "@/components/__molecules__/OverlayMenu";
 
-const user = {
+const MOCK_USER = {
   firstname: "JOHN",
   lastname: "DOE",
   image: "/../public/img/photoUser.png",
@@ -18,7 +18,7 @@ const user = {
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
         <h2>Bouton</h2>
         <Button size={SIZE.MEDIUM} color={BUTTON_TYPE.PRIMARY}>
@@ -43,14 +43,10 @@ const Home = () => {
 
       <div>
         <h3>USER</h3>
-        <OverlayMenu user={user} />
+        <OverlayMenu user={MOCK_USER} />
       </div>
-    </main>
+    </div>
   );
-};
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
 };
 
 export default Home;

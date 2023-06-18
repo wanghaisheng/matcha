@@ -17,6 +17,8 @@ module.exports = {
         secondary: "#74BDCB",
         tertiary: "#EFE7BC",
         quaternary: "#E7F2F8",
+        error: "#FF3333",
+        valid: "#00FF00",
       },
     },
   },
